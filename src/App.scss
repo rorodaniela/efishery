@@ -1,0 +1,32 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+$palettes: (
+    green: (
+        700: #0B5F4B,
+        600: #059A7A,
+        500: #40BEA9,
+        400: #81ECD6,
+    ),
+    grey: (
+        500: #AAAAAA,
+        400: #B4B4B4,
+        300: #E5E5E5,
+    ),
+);
+
+:root {
+    @each $colorname, $palette in $palettes {
+        @each $key, $value in $palette {
+            $keyname: "--palette-" + $colorname + "-" + $key;
+            #{$keyname}: #{$value};
+        }
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
