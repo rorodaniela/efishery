@@ -36,6 +36,7 @@ function addPrice(payload, setOpen) {
     const res = await priceServices.addPrice(payload);
 
     if (res.status === 200 || res.status === 201) {
+      dispatch(getPriceList());
       Swal.fire({
         position: "center",
         icon: "success",
@@ -45,19 +46,18 @@ function addPrice(payload, setOpen) {
       });
       dispatch(success(res?.data));
       setOpen(false);
-      dispatch(getPriceList());
     } else {
       dispatch(failure(res?.message));
     }
   };
 
   function request() {
-    return { type: priceConstants.GET_PRICELIST_REQUEST };
+    return { type: priceConstants.ADD_PRICE_REQUEST };
   }
   function success(payload) {
-    return { type: priceConstants.GET_PRICELIST_SUCCESS, payload };
+    return { type: priceConstants.ADD_PRICE_SUCCESS, payload };
   }
   function failure(error) {
-    return { type: priceConstants.GET_PRICELIST_FAILURE, error };
+    return { type: priceConstants.ADD_PRICE_FAILURE, error };
   }
 }

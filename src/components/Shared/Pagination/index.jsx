@@ -17,7 +17,7 @@ export default function Pagination({ position, data, setCurrentDataPage }) {
 
   useEffect(() => {
     let temp = [];
-    for (let i = 1; i <= Math.ceil(data?.length / itemsPerPage); i++) {
+    for (let i = 1; i <= Math?.ceil(data?.length / itemsPerPage); i++) {
       temp.push(i);
     }
     setPages(temp);
@@ -25,7 +25,7 @@ export default function Pagination({ position, data, setCurrentDataPage }) {
   }, [data]);
 
   const handleClick = (event) => {
-    setcurrentPage(Number(event.target.id));
+    setcurrentPage(Number(event?.target?.id));
     setCurrentDataPage(currentItems);
   };
 
