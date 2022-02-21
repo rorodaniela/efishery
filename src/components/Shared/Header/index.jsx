@@ -1,6 +1,6 @@
 import "./styles.scss";
-import logo from "../../assets/logo-white.png";
-import icon from "../../assets/icon-white.png";
+import logo from "../../../assets/logo-white.png";
+import icon from "../../../assets/icon-white.png";
 
 export default function Header(props) {
   return (

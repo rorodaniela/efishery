@@ -9,3 +9,110 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid var(--palette-green-500);
+  margin-bottom: 5px;
+  min-height: 100px;
+  padding: 10px 20px;
+  .no-data {
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  h4 {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 5px;
+  }
+  span {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--palette-grey-600);
+  }
+  .detail-info {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  .row {
+    margin-bottom: 5px;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    span {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.input {
+  width: 150px;
+  margin-right: 20px;
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--palette-grey-700);
+  }
+}
+
+.btn {
+  margin-top: 10px;
+  margin-inline: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.btn-primary {
+  background-color: white;
+  color: var(--palette-green-500);
+  border: 1px solid var(--palette-green-500);
+  box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.1);
+  &:hover {
+    color: white;
+    background-color: var(--palette-green-500);
+  }
+}
+
+.btn-secondary {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #dc3545;
+  box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.1);
+  &:hover {
+    color: #dc3545;
+    background-color: white;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+@media (min-width: 501px) {
+  .mobile-card {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .table-desktop {
+    display: none;
+    width: 100%;
+    max-height: 85vh;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}

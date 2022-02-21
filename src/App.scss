@@ -1,32 +1,35 @@
 /* Google Fonts Import Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 $palettes: (
-    green: (
-        700: #0B5F4B,
-        600: #059A7A,
-        500: #40BEA9,
-        400: #81ECD6,
-    ),
-    grey: (
-        500: #AAAAAA,
-        400: #B4B4B4,
-        300: #E5E5E5,
-    ),
+  green: (
+    700: #0b5f4b,
+    600: #059a7a,
+    500: #40bea9,
+    400: #81ecd6,
+  ),
+  grey: (
+    700: #48595f,
+    600: #808692,
+    500: #aaaaaa,
+    400: #b4b4b4,
+    300: #e5e5e5,
+    200: #f8f8f9,
+  ),
 );
 
 :root {
-    @each $colorname, $palette in $palettes {
-        @each $key, $value in $palette {
-            $keyname: "--palette-" + $colorname + "-" + $key;
-            #{$keyname}: #{$value};
-        }
+  @each $colorname, $palette in $palettes {
+    @each $key, $value in $palette {
+      $keyname: "--palette-" + $colorname + "-" + $key;
+      #{$keyname}: #{$value};
     }
+  }
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }

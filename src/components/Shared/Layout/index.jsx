@@ -1,4 +1,4 @@
-import { Bottombar, Header, Sidebar } from "..";
+import { Bottombar, Header, Sidebar } from "../..";
 import "./styles.scss";
 
 export default function Layout({ children }) {

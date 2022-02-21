@@ -1,10 +1,10 @@
 import "./styles.scss";
-import logo from "../../assets/logo-white.png";
-import icon from "../../assets/icon-white.png";
-import anonymous from "../../assets/anonymous.png";
+import logo from "../../../assets/logo-white.png";
+import icon from "../../../assets/icon-white.png";
+import anonymous from "../../../assets/anonymous.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import menu from "../../collections/menu";
+import menu from "../../../collections/menu";
 
 export default function Sidebar({ children }) {
   const [open, setOpen] = useState(true);
@@ -36,8 +36,8 @@ export default function Sidebar({ children }) {
           ></i>
         </div>
         <ul className="nav_list">
-          {menu?.map((item) => (
-            <li>
+          {menu?.map((item, idx) => (
+            <li key={idx}>
               <Link className="menu" to={item?.url}>
                 <i className={`bx bx-${item?.iconClass}`}></i>
                 <span
@@ -55,16 +55,16 @@ export default function Sidebar({ children }) {
               </span>
             </li>
           ))}
-          <li class="profile" style={{ width: open ? "215px" : "" }}>
-            <div class="profile-details">
+          <li className="profile" style={{ width: open ? "215px" : "" }}>
+            <div className="profile-details">
               <img src={anonymous} alt="profileImg" />
-              <div class="name_job">
-                <div class="name">Roro Daniela</div>
-                <div class="job">Administrator</div>
+              <div className="name_job">
+                <div className="name">Roro Daniela</div>
+                <div className="job">Administrator</div>
               </div>
             </div>
             <i
-              class="bx bx-log-out"
+              className="bx bx-log-out"
               id="log_out"
               style={{
                 width: open ? "50px" : "100%",
@@ -74,10 +74,10 @@ export default function Sidebar({ children }) {
         </ul>
       </div>
       <div
-        class="content"
+        className="content"
         style={{
           left: open ? "215px" : "",
-          width: open ? "calc(100% - 215px)" : "",
+          width: open ? "calc(100% - 215px)" : "calc(100% - 78px)",
         }}
       >
         {children}

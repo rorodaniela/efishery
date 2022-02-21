@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+}
+
+th {
+  text-align: center;
+  font-size: 15px;
+  background-color: var(--palette-grey-200);
+  padding: 10px;
+  color: var(--palette-grey-700);
+}
+
+td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
