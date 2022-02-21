@@ -66,13 +66,13 @@ export default function PriceList({ pricelist, arealist, sizelist }) {
         </div>
       </div>
       <div className="flex">
-        <button className="btn btn-primary" onClick={handleSearch}>
-          Search
-        </button>
         <button className="btn btn-secondary" onClick={() => setFilter()}>
           Reset
         </button>
-        <button className="btn btn-secondary" onClick={() => setOpen(!open)}>
+        <button className="btn btn-primary" onClick={handleSearch}>
+          Search
+        </button>
+        <button className="btn btn-primary" onClick={() => setOpen(!open)}>
           Add
         </button>
       </div>
