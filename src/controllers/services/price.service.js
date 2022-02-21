@@ -46,7 +46,7 @@ async function addPrice(payload) {
     const response = await axios
       .post(`${baseUrl}${requestUrl}`, bodyRequest)
       .then((res) => {
-        if (res.status === 201) {
+        if (res.status === 200 || res.status === 201) {
           return {
             data: res?.data,
             status: res?.status,

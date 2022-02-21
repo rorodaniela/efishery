@@ -35,7 +35,7 @@ function addPrice(payload, setOpen) {
     dispatch(request());
     const res = await priceServices.addPrice(payload);
 
-    if (res?.status === 201) {
+    if (res.status === 200 || res.status === 201) {
       Swal.fire({
         position: "center",
         icon: "success",

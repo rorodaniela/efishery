@@ -102,7 +102,7 @@ export default function PriceList({ pricelist, arealist, sizelist }) {
           setCurrentDataPage={setCurrentDataPage}
         />
       </div>
-      <Modal open={open} setOpen={setOpen} component={AddPrice(setOpen)} />
+      <Modal open={open} setOpen={setOpen} component={AddPrice} />
     </div>
   );
 }
