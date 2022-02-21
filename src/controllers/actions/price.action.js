@@ -1,5 +1,6 @@
 import { priceConstants } from "../constants";
 import { priceServices } from "../services";
+import Swal from "sweetalert2";
 
 export const priceActions = {
   getPriceList,
@@ -29,13 +30,22 @@ function getPriceList(payload) {
   }
 }
 
-function addPrice(payload) {
+function addPrice(payload, setOpen) {
   return async (dispatch) => {
     dispatch(request());
     const res = await priceServices.addPrice(payload);
 
-    if (res?.status === 200) {
+    if (res?.status === 201) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Hasil Panen Berhasil Ditambahkan",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       dispatch(success(res?.data));
+      setOpen(false);
+      dispatch(getPriceList());
     } else {
       dispatch(failure(res?.message));
     }

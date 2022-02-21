@@ -5,5 +5,6 @@ export { default as Layout } from "./Shared/Layout";
 export { default as Table } from "./Shared/Table";
 export { default as Pagination } from "./Shared/Pagination";
 export { default as Dropdown } from "./Shared/Dropdown";
+export { default as Modal } from "./Shared/Modal";
 
 export { default as PriceList } from "./PriceList";

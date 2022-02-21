@@ -7,6 +7,8 @@ import CardPrice from "./CardPrice";
 import Dropdown from "../Shared/Dropdown";
 import { useDispatch } from "react-redux";
 import { priceActions } from "../../controllers/actions";
+import Modal from "../Shared/Modal";
+import AddPrice from "./AddPrice";
 
 export default function PriceList({ pricelist, arealist, sizelist }) {
   const dispatch = useDispatch();
@@ -14,6 +16,7 @@ export default function PriceList({ pricelist, arealist, sizelist }) {
   const [filter, setFilter] = useState({});
   const [area, setArea] = useState();
   const [size, setSize] = useState();
+  const [open, setOpen] = useState(false);
 
   const handleChange = (name, value) => {
     setFilter({ ...filter, [name]: value });
@@ -69,13 +72,16 @@ export default function PriceList({ pricelist, arealist, sizelist }) {
         <button className="btn btn-secondary" onClick={() => setFilter()}>
           Reset
         </button>
+        <button className="btn btn-secondary" onClick={() => setOpen(!open)}>
+          Add
+        </button>
       </div>
-      <Pagination
-        position={"flex-end"}
-        data={pricelist}
-        setCurrentDataPage={setCurrentDataPage}
-      />
       <div className="table-desktop">
+        <Pagination
+          position={"flex-end"}
+          data={pricelist}
+          setCurrentDataPage={setCurrentDataPage}
+        />
         <Table head={head} data={currentDataPage} />
       </div>
       <div className="mobile-card">
@@ -90,7 +96,13 @@ export default function PriceList({ pricelist, arealist, sizelist }) {
             tgl_parsed={item?.tgl_parsed}
           />
         ))}
+        <Pagination
+          position={"center"}
+          data={pricelist}
+          setCurrentDataPage={setCurrentDataPage}
+        />
       </div>
+      <Modal open={open} setOpen={setOpen} component={AddPrice} />
     </div>
   );
 }
